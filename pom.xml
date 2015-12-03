@@ -471,8 +471,8 @@
 				<version>2.2</version>
 				<configuration>
 					<server>tomcat-development-server</server>
-					<port>9966</port>
-					<path>/petclinic</path>
+					<port>8000</port>
+					<path>/petclinic-ui</path>
 				</configuration>
 			</plugin>
 		</plugins>

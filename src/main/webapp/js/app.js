@@ -3,7 +3,7 @@ var app = angular.module('spring-petclinic', ['ui.router','ui.router.stateHelper
 
 /** Start of Configurable constants **/
 app.constant('useMockData', false);
-app.constant('context', '/petclinic');
+app.constant('context', 'http://localhost:9000/petclinic-api');
 /** End of Configurable constants **/
 
 app.config(['stateHelperProvider','$urlRouterProvider','$urlMatcherFactoryProvider',function(stateHelperProvider,$urlRouterProvider,$urlMatcherFactoryProvider) {
