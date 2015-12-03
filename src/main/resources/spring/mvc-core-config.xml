@@ -15,11 +15,6 @@
 
     <import resource="mvc-view-config.xml"/>
 
-    <!--
-        - POJOs labeled with the @Controller and @Service annotations are auto-detected.
-    -->
-    <context:component-scan
-            base-package="org.springframework.samples.petclinic.rest"/>
 
 
 	<bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean" 
@@ -35,28 +30,14 @@
 	    </property>
 	</bean>
 
-    <mvc:annotation-driven conversion-service="conversionService" >
-    	<mvc:message-converters>
-    		<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
-    			<property name="objectMapper" ref="objectMapper" />
-    		</bean>
-    	</mvc:message-converters>
-    </mvc:annotation-driven>
-
+  
     <mvc:view-controller path="/" view-name="index" />
 
     <!-- serve static resources (*.html, ...) from src/main/webapp/ 
     Required when both servlet-mapping is '/' and static resources need to be served -->
     <mvc:default-servlet-handler />
 
-    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <property name="formatters">
-            <set>
-                <bean class="org.springframework.samples.petclinic.web.PetTypeFormatter"/>
-            </set>
-        </property>
-    </bean>
-
+ 
     <!--
         - Message source for this context, loaded from localized "messages_xx" files.
         - Files are stored inside src/main/resources
